@@ -1,6 +1,9 @@
+require('dotenv').config();
 const express = require("express");
 const axios = require("axios");
 const app = express();
+
+let API_KEY = process.env.API_KEY
 
 app.set('view engine', 'ejs')
 // using ejs as the view engine for rending ejs files
@@ -11,7 +14,7 @@ app.get("/", (req, res) => {
   let qs = {
     params: {
       s: "star wars",
-      apikey: "8de3572f",
+      apikey: API_KEY,
     },
   };
   axios.get("http://www.omdbapi.com", qs).then((response) => {
