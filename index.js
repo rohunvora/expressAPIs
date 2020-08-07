@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
   let qs = {
     params: {
       s: "star wars",
-      apikey: API_KEY,
-    },
+      apikey: API_KEY
+    }
   };
   axios.get("http://www.omdbapi.com", qs).then((response) => {
     console.log(response.data);
